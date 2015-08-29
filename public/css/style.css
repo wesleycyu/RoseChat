@@ -44,4 +44,15 @@ form button {
   background: #eee;
 }
 
+#messages li.new_user_msg {
+  background: rgb(130, 224, 255);
+  font-weight: bold;
+}
+
+#messages li.user_left_msg {
+  background: red;
+  font-weight: bold;
+}
+
+
 
