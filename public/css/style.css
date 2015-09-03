@@ -40,6 +40,8 @@ body {
   height: 85vh;
 }
 
+
+
 /* NICKNAME MENU STYLING */
 
 #nickname-wrap{
@@ -66,6 +68,7 @@ body {
 #chat-wrap {
   width: 100%;
   height: 80%;
+
 }
 
 .messages {
@@ -92,7 +95,7 @@ body {
 #partner-chat {
   display: flex;
   padding-left: 50px;
-  width: 85%;
+  width: 80%;
   height: 65%;
   margin-bottom: 20px;
 }
@@ -121,6 +124,7 @@ body {
 
 .arrow-left {
   position: relative;
+  padding-left: 20px;
   top: 78%;
   width: 0;
   height: 0;
@@ -129,12 +133,30 @@ body {
   border-right:20px solid #f8a6a8;
 }
 
+#partner-chat div.profile {
+  position: relative;
+  top: 65%;
+}
+
+#partner-chat img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 70%;
+}
+
+#partner-chat .nickname {
+  text-align: center;
+  color: #a68257;
+  font-size: 1.2em;
+}
+
 /* USER CHAT BUBBLE */
 
 #user-chat {
   display: flex;
   padding-right: 50px;
-  width: 85%;
+  width: 80%;
   height: 45%;
   margin-top: 20px;
   float: right;
@@ -164,12 +186,26 @@ body {
 
 .arrow-right {
   position: relative;
+  padding-right: 20px;
   top: 14%;
   width: 0;
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #c4efe7;
+}
+
+#user-chat img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 3%;
+}
+
+#user-chat .nickname {
+  text-align: center;
+  color: #a68257;
+  font-size: 1.2em;
 }
 
 #messages li.user_connect_msg {
