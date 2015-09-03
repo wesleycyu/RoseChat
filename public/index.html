@@ -29,14 +29,15 @@
         <div id="partner-chat">
           <span class="arrow-left"></span>
           <div id="partner-chat-bubble">
-            <ul class="messages" id="partner-messages"><li>hey!</li>
-            <li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li></ul>
+            <div id="partner-past-messages"><ul class="messages" id="partner-messages"></ul></div>
+            <div id="partner-current-message"></div>
           </div>
         </div>
 
         <div id="user-chat">
           <div id="user-chat-bubble">
-            <ul class="messages" id="user-chat-messages"><li id="message-box" contentEditable="true">This is where messages go!</li><li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li></ul>
+            <div id="message-box" contentEditable="true"></div>
+            <div id="user-past-messages"><ul class="messages" id="user-chat-messages"></ul></div>
           </div><span class="arrow-right"></span>
         </div>
 
@@ -47,8 +48,3 @@
   </body>
 
 </html>
-
-<!--
-      <form id="chat-message-form" action="">
-        <input id="message-box" autocomplete="off" /><button>Send</button>
-      </form> -->

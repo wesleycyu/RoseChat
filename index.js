@@ -32,12 +32,12 @@ io.on("connection", function(socket){
   })
 
   socket.on("chat message", function(msg) {
-    var chat_object = {
-      sender_name: socket.nickname,
-      message: msg
-    }
-    io.emit("chat message", chat_object);
+    socket.broadcast.emit("chat message", msg);
   });
+
+  socket.on("clear message", function(msg){
+    socket.broadcast.emit("clear message", msg);
+  })
 
   socket.on('disconnect', function(){
     var remove_index = nicknames.indexOf(socket.nickname)
