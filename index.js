@@ -7,7 +7,7 @@ var nicknames = []
 
 app.use(express.static("public"));
 
-app.get("*", function (req, res){
+app.get("/*", function (req, res){
   res.sendFile(__dirname + "/public/index.html");
 });
 

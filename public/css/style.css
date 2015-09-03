@@ -41,6 +41,25 @@ body {
 }
 
 
+/* NICKNAME MENU STYLING */
+
+#channel-wrap{
+  width: 100%;
+  height: 80%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+}
+
+#channel-form{
+  border: 7px solid #a68257;
+  border-radius: 5px;
+  padding: 35px;
+  color: #a68257;
+}
 
 /* NICKNAME MENU STYLING */
 
@@ -53,7 +72,6 @@ body {
   justify-content: center;
   align-content: flex-start;
   align-items: center;
-  display: none;
 }
 
 #nickname-form{
@@ -68,7 +86,7 @@ body {
 #chat-wrap {
   width: 100%;
   height: 80%;
-
+  display: none;
 }
 
 .messages {
@@ -145,9 +163,11 @@ body {
   top: 70%;
 }
 
-#partner-chat .nickname {
+#partner-nickname {
   text-align: center;
   color: #a68257;
+  padding-top: 10px;
+  font-weight: bolder;
   font-size: 1.2em;
 }
 
@@ -202,9 +222,11 @@ body {
   top: 3%;
 }
 
-#user-chat .nickname {
+#user-nickname {
   text-align: center;
   color: #a68257;
+  padding-top: 10px;
+  font-weight: bolder;
   font-size: 1.2em;
 }
 
