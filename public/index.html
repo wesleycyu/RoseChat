@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <title>Chat Stream</title>
+    <title>Rose Chat</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -12,21 +12,43 @@
 
   <body>
 
-    <div id="nickname-wrap">
-      <h2>Please choose a Nickname</h2>
-      <p id="nickname-errors"></p>
-      <form id="nickname-form">
-        <input id="nickname-input" size=35 /> <button>Submit</button>
-      </form>
-    </div>
+    <div id='menu'><span>ROSE CHAT</span></div>
 
-    <div id="chat-wrap">
-      <ul id="messages"></ul>
-      <form id="chat-message-form" action="">
-        <input id="message-box" autocomplete="off" /><button>Send</button>
-      </form>
+    <div id='app'>
+
+      <div id="nickname-wrap">
+        <form id="nickname-form">
+          <h2>PLEASE CHOOSE A NICKNAME</h2>
+          <p id="nickname-errors"></p>
+          <input id="nickname-input" size=35 /> <button>Submit</button>
+        </form>
+      </div>
+
+      <div id="chat-wrap">
+
+        <div id="partner-chat">
+          <span class="arrow-left"></span>
+          <div id="partner-chat-bubble">
+            <ul class="messages" id="partner-messages"><li>hey!</li>
+            <li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li></ul>
+          </div>
+        </div>
+
+        <div id="user-chat">
+          <div id="user-chat-bubble">
+            <ul class="messages" id="user-chat-messages"><li id="message-box" contentEditable="true">This is where messages go!</li><li>hey!</li><li>hey!</li><li>hey!</li><li>hey!</li></ul>
+          </div><span class="arrow-right"></span>
+        </div>
+
+      </div>
+
     </div>
 
   </body>
 
 </html>
+
+<!--
+      <form id="chat-message-form" action="">
+        <input id="message-box" autocomplete="off" /><button>Send</button>
+      </form> -->

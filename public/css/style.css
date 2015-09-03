@@ -6,10 +6,117 @@
 
 body {
   font: 13px Helvetica, Arial;
+  background-color: #002543;
+  height: 100vh;
+  width: 100vw;
+}
+
+#menu {
+  width: 100vw;
+  height: 15vh;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  z-index: 10
+}
+
+#menu span {
+  color: #a68257;
+  font-size: 2em;
+  font-weight: bolder;
+  padding: 10px;
+  margin: 15px;
+  margin-top: 2px;
+  border: 7px solid #a68257;
+}
+
+#app {
+  width: 100vw;
+  height: 85vh;
+}
+
+#nickname-wrap{
+  width: 100%;
+  height: 80%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+  display: none;
+}
+
+#nickname-form{
+  border: 7px solid #a68257;
+  border-radius: 5px;
+  padding: 35px;
+  color: #a68257;
 }
 
 #chat-wrap {
-  display: none;
+  width: 100%;
+  height: 80%;
+}
+
+#partner-chat {
+  display: flex;
+  padding-left: 50px;
+  width: 70%;
+  height: 65%;
+  margin-bottom: 20px;
+}
+
+#partner-chat-bubble {
+  background-color: #f8a6a8;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: scroll;
+}
+
+#user-chat {
+  display: flex;
+  padding-right: 50px;
+  width: 70%;
+  height: 35%;
+  margin-top: 20px;
+  float: right;
+}
+
+#user-chat-bubble {
+  background-color: #c4efe7;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: scroll;
+}
+
+#message-box {
+  background-color: #d4f3ee;
+  padding: 10px;
+  opacity: 1;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  margin-top: 10%;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #c4efe7;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  margin-top: 20%;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right:20px solid #f8a6a8;
 }
 
 #chat-wrap form {
@@ -34,14 +141,16 @@ body {
   padding: 10px;
 }
 
-#messages {
+.messages {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  font-size: 2em;
+  color: #002543;
+  margin: 25px;
 }
 
-#messages li {
-  padding: 5px 10px;
+.messages li {
+  padding: 7px;
+  opacity: .4;
 }
 
 #messages li:nth-child(odd) {
