@@ -17,6 +17,9 @@ http.listen(3000, function(){
 
 io.on("connection", function(socket){
 
+  socket.on("new channel", function(url, callback){
+  })
+
   socket.on("new user", function(nickname, callback){
     if (nicknames.indexOf(nickname) == -1) {
       callback({isValid:true});
@@ -32,7 +35,11 @@ io.on("connection", function(socket){
   })
 
   socket.on("chat message", function(msg) {
-    socket.broadcast.emit("chat message", msg);
+    var message_object = {
+      nickname: socket.nickname,
+      contents: msg
+    }
+    socket.broadcast.emit("chat message", message_object);
   });
 
   socket.on("clear message", function(msg){

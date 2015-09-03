@@ -1,22 +1,27 @@
 var socket = io();
 
-socket.on("chat message", function(msg){
-  $("#partner-current-message").text(msg);
+socket.on("chat message", function(message_object){
+  $("#partner-nickname").text(message_object.nickname);
+  $("#partner-current-message").text(message_object.contents);
+  $('#partner-past-messages').scrollTop($('#partner-past-messages')[0].scrollHeight);
 });
 
 socket.on("clear message", function(msg){
   $("#partner-messages").append($(document.createElement("li")).append().text(msg));
   $("#partner-current-message").text("");
+  $('#partner-past-messages').scrollTop($('#partner-past-messages')[0].scrollHeight);
 })
 
 socket.on("user connected", function(nickname){
-  $("#messages").append($("<li class='user_connect_msg'>").text(nickname + " has connected!"))
+  $("#partner-messages").append($("<li class='user_connect_msg'>").text(nickname + " has connected!"))
   $("#partner-nickname").text(nickname);
+  $('#partner-past-messages').scrollTop($('#partner-past-messages')[0].scrollHeight);
 });
 
 socket.on("user disconnected", function(nickname){
-  $("#messages").append($("<li class='user_disconnect_msg'>").text(nickname + " has disconnected!"))
-  $("#partner-nickname").text("NO USER");
+  $("#partner-messages").append($("<li class='user_disconnect_msg'>").text(nickname + " has disconnected!"))
+  $("#partner-nickname").text("NO USER CONNECTED");
+  $('#partner-past-messages').scrollTop($('#partner-past-messages')[0].scrollHeight);
 });
 
 $(function(){
@@ -53,7 +58,7 @@ $(function(){
     var channel_url = channel_name.split(" ").join("-");
     socket.emit("new channel", channel_url, function(data){
       if (data.isValid){
-        $("#channel-form").append($(document.createElement("")).append("<a href=" + data.url + ">" + data.url + "</a>"
+        $("#channel-form").append("<a href=" + data.url + ">" + data.url + "</a>")
       } else {
         $("#channel-errors".html(data.errorMessage))
       }
